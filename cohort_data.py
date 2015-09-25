@@ -35,7 +35,7 @@ def sort_by_cohort(filename):
         ex. all_students = [winter_15, spring_15, summer_15, tas]
 
     """
-
+    # added lists for all cohorts in data file
     all_students = []
     winter_15 = []
     spring_15 = []
@@ -46,7 +46,7 @@ def sort_by_cohort(filename):
     fall_13 = []
     tas = []
 
-    # Code goes here
+    # printed a set of all cohorts in data files
     cohort_data_file = open(filename)
 
     cohort_set = set()
@@ -58,7 +58,7 @@ def sort_by_cohort(filename):
 
     print cohort_set
 
-
+    # This will sort students into cohorts
         # name = line[0] + " " + line[1]
         # if line[4] == "Winter 2015":
         #     winter_15.append(name)
