@@ -16,7 +16,7 @@ def unique_houses(filename):
     cohort_data_file = open(filename)
 
     houses = set()
-    
+
     for line in cohort_data_file:
         line = line.split("|")
         houses.add(line[2])
@@ -25,26 +25,49 @@ def unique_houses(filename):
     return houses
 
 
-# def sort_by_cohort(filename):
-#     """TODO: Sort students by cohort.
+def sort_by_cohort(filename):
+    """TODO: Sort students by cohort.
 
-#     Iterates over the data to create a list for each cohort, ordering students
-#     alphabetically by first name and tas separately. Returns list of lists.
+    Iterates over the data to create a list for each cohort, ordering students
+    alphabetically by first name and tas separately. Returns list of lists.
 
-#         ex. winter_15 = ["alice tsao", "amanda gilmore", "anne vetto", "..." ]
-#         ex. all_students = [winter_15, spring_15, summer_15, tas]
+        ex. winter_15 = ["alice tsao", "amanda gilmore", "anne vetto", "..." ]
+        ex. all_students = [winter_15, spring_15, summer_15, tas]
 
-#     """
+    """
 
-#     all_students = []
-#     winter_15 = []
-#     spring_15 = []
-#     summer_15 = []
-#     tas = []
+    all_students = []
+    winter_15 = []
+    spring_15 = []
+    summer_15 = []
+    fall_14 = []
+    summer_14 = []
+    spring_13 = []
+    fall_13 = []
+    tas = []
 
-#     # Code goes here
+    # Code goes here
+    cohort_data_file = open(filename)
 
-#     return all_students
+    cohort_set = set()
+
+    for line in cohort_data_file:
+        line = line.rstrip()
+        line = line.split("|")
+        cohort_set.add(line[4])
+
+    print cohort_set
+
+
+        # name = line[0] + " " + line[1]
+        # if line[4] == "Winter 2015":
+        #     winter_15.append(name)
+        # elif line[4] == "Spring 2015":
+        #     spring_15.append(name)
+        # elif line[4] == "Summer 2015":
+        #     summer_15.append(name)
+
+    return all_students
 
 
 # def students_by_house(filename):
