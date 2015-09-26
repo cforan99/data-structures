@@ -47,25 +47,42 @@ def sort_by_cohort(filename):
     tas = []
 
     # printed a set of all cohorts in data files
+        # cohort_data_file = open(filename)
+
+        # cohort_set = set()
+
+        # for line in cohort_data_file:
+        #     line = line.rstrip()
+        #     line = line.split("|")
+        #     cohort_set.add(line[4])
+
+        # print cohort_set
+
+    # This will sort students into cohorts
+
     cohort_data_file = open(filename)
-
-    cohort_set = set()
-
     for line in cohort_data_file:
         line = line.rstrip()
         line = line.split("|")
-        cohort_set.add(line[4])
 
-    print cohort_set
+        name = line[0] + " " + line[1]
 
-    # This will sort students into cohorts
-        # name = line[0] + " " + line[1]
-        # if line[4] == "Winter 2015":
-        #     winter_15.append(name)
-        # elif line[4] == "Spring 2015":
-        #     spring_15.append(name)
-        # elif line[4] == "Summer 2015":
-        #     summer_15.append(name)
+        if line[4] == "Winter 2015":
+            winter_15.append(name)
+        elif line[4] == "Spring 2015":
+            spring_15.append(name)
+        elif line[4] == "Summer 2015":
+            summer_15.append(name)
+        elif line[4] == "Fall 2014":
+            fall_14.append(name)
+        elif line[4] == "Summer 2014":
+            summer_14.append(name)
+        elif line[4] == "Spring 2013":
+            spring_13.append(name)
+        elif line[4] == "Fall 2013":
+            fall_13.append(name)
+        elif line[-2] == "":
+            tas.append(name)
 
     return all_students
 
